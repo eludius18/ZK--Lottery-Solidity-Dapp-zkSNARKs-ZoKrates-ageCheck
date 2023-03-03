@@ -33,7 +33,7 @@ def main(private field birthYear, field comparisonYear, field minimumDifference)
 ## Deploy Lottery Smart Contract
 
 ```shell
-npx hardhat deploy --network bscTestnet --tags Lottery
+npx hardhat deploy --network <blockchain-network> --tags Lottery
 ```
 
 ## Paste Proof and Input Generated in enterLottery()
@@ -41,3 +41,5 @@ npx hardhat deploy --network bscTestnet --tags Lottery
 ```shell
 proof.txt
 ```
+
+![tx](https://github.com/eludius18/zkSNARKs-ZoKrates-ageCheck/blob/main/tx.png)
