@@ -26,7 +26,18 @@ def main(private field birthYear, field comparisonYear, field minimumDifference)
 ```shell
 ./zokrates compile -i code/ageCheck.zok
 ./zokrates setup
-./zokrates compute-witness -a 1990 2020 21
+./zokrates compute-witness -a 1990 2020 18
 ./zokrates generate-proof
 ./zokrates export-verifier
+```
+## Deploy Lottery Smart Contract
+
+```shell
+npx hardhat deploy --network bscTestnet --tags Lottery
+```
+
+## Paste Proof and Input Generated in enterLottery()
+
+```shell
+proof.txt
 ```

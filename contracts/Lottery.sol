@@ -72,7 +72,7 @@ contract Lottery is
     /// @notice Enter function to send ETH
     function enterLottery(
         Proof memory proof, 
-        uint[2] memory input
+        uint[3] memory input
         )public payable
         nonReentrant
         whenNotPaused
