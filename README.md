@@ -3,6 +3,7 @@
 
 ```shell
 cd ZoKrates
+export ZOKRATES_STDLIB=$PWD/zokrates_stdlib/stdlib
 cargo +nightly build --release
 ```
 ## Creates ageCheck.zok
