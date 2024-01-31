@@ -67,14 +67,14 @@ def main(private field birthYear, field comparisonYear, field minimumDifference)
 }
 ```
 
-6. Execute all in zoKrates
+6. Execute all in `/zoKrates`
 
 ```shell
-./zokrates compile -i code/ageCheck.zok
-./zokrates setup
-./zokrates compute-witness -a 1990 2020 18
-./zokrates generate-proof
-./zokrates export-verifier
+zokrates compile -i code/ageCheck.zok
+zokrates setup
+zokrates compute-witness -a 1990 2020 18
+zokrates generate-proof
+zokrates export-verifier
 ```
 7. Deploy Lottery Smart Contract in localhost or live network
 
