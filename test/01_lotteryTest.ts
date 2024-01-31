@@ -8,7 +8,7 @@ import { makeSnapshot, snapshot } from "./test-helpers/snapshot";
 import { expect } from "@openzeppelin/test-helpers";
 
 
-describe("DutchAuction Test suite", async function () {
+describe("LotteryConntract Test suite", async function () {
     let accounts: Signer[];
     let lotteryDeployment: Deployment;
     let lotteryContract: Lottery;
@@ -160,6 +160,13 @@ describe("DutchAuction Test suite", async function () {
                 expect(lotteryBalance).to.equal(0);
             });
             it("should allow Alice to send 3 ether and Bob to send 5 ether before distributing the prizes", async () => {
+                await lotteryContract.connect(alice).enterLottery({value: 3});
+                await lotteryContract.connect(bob).enterLottery({value: 5});
+                await lotteryContract.connect(owner).selectWinner();
+                const lotteryBalance = await lotteryContract.connect(owner).getBalance();
+                expect(lotteryBalance).to.equal(0);
+            });
+            it("should allow Alice to send 3 ether and Bob to send 5 ether after distributing the prizes", async () => {
                 await lotteryContract.connect(alice).enterLottery({value: 3});
                 await lotteryContract.connect(bob).enterLottery({value: 5});
                 await lotteryContract.connect(owner).selectWinner();
